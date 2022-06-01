@@ -1,13 +1,13 @@
-package com.ward.phtogram;
+package com.ward.photogram;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PhtogramApplication {
+public class PhotogramApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PhtogramApplication.class, args);
+		SpringApplication.run(PhotogramApplication.class, args);
 	}
 
 }

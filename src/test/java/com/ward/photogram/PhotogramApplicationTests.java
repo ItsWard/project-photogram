@@ -1,10 +1,10 @@
-package com.ward.phtogram;
+package com.ward.photogram;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PhtogramApplicationTests {
+class PhotogramApplicationTests {
 
 	@Test
 	void contextLoads() {
