@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class ControllerExceptionHandler {
 
     @ExceptionHandler(CustomValidationException.class) //Runtime Excption에 해당하는 부분은 모두 여기로 옴옴
-   public CMRespDto vaildationException(CustomValidationException e) {
-        return new CMRespDto(e.getMessage(), e.getErrorMap());
+   public CMRespDto<?> vaildationException(CustomValidationException e) {
+        return new CMRespDto<>(-1, e.getMessage(), e.getErrorMap());
     }
 
 }
