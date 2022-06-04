@@ -37,7 +37,7 @@
 
                     <div id="storyCommentList-1">
 
-                        <div class="sl__item__contents__comment" id="storyCommentItem-1"">
+                        <div class="sl__item__contents__comment" id="storyCommentItem-1">
                         <p>
                             <b>Lovely :</b> 부럽습니다.
                         </p>
@@ -55,7 +55,6 @@
                     <button type="button" onClick="addComment()">게시</button>
                 </div>
 
-            </div>
             </div>
 
         </article>

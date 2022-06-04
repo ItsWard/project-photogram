@@ -20,6 +20,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
+
         http.authorizeRequests() //요청에 대한 권한을 지정 할 수 있음
                 .antMatchers("/", "/user/**", "/image/**", "/subscribe/**", "/comment/**") // 해당 Url로 진행되는 모든 것들
                 .authenticated()
@@ -28,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()// 로그인 페이지와 기타 로그인 처리 및 성공 실패 처리를 사용함
                 .loginPage("/auth/signin")//로그인 페이지 해당 주소
-                .loginProcessingUrl("auth/signin")//POST -> 스프링 시큐리티가 로그인 프로세스 진행 (로그인 요청인지 확인)//UserDetailsService
+                .loginProcessingUrl("/login")//POST -> 스프링 시큐리티가 로그인 프로세스 진행 (로그인 요청인지 확인)//UserDetailsService
                 .defaultSuccessUrl("/"); //정상적으로 인증 성공했을경우 이동하는 페이지 설정
     }
 }

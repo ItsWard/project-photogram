@@ -1,18 +1,21 @@
 package com.ward.photogram;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 //@Controller
 public class ViewControllerTest {
 
     @GetMapping("/auth/signup")
     public String signupPage() {
+
         return "auth/signup";
     }
 
-    @GetMapping("/auth/signin")
+    @RequestMapping(value = "/auth/signin", method= {RequestMethod.GET, RequestMethod.POST})
     public String signinPage() {
+        System.out.println(signinPage().toString());
         return "auth/signin";
     }
 

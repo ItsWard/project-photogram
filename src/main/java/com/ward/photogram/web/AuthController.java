@@ -31,13 +31,11 @@ public class AuthController {
 
     @GetMapping("/auth/signin")
     public String signinForm() {
-
         return "auth/signin";
     }
 
     @GetMapping("/auth/signup")
     public String signupForm() { //key=valie x-www-form-urlencoded
-
         return "auth/signup";
     }
     //회원가입버튼 -> /auth/signUp -> auth/signin

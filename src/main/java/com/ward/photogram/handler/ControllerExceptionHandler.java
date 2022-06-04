@@ -2,6 +2,7 @@ package com.ward.photogram.handler;
 
 import com.ward.photogram.handler.ex.CustomValidationException;
 import com.ward.photogram.util.Script;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,22 @@ public class ControllerExceptionHandler {
     public String vaildationException(CustomValidationException e) {
         System.out.println("--------------------------");
         return Script.back(e.getErrorMap().toString()); // => 오류메세지 팝업 및 자동으로 뒤로가짐
+    }
+
+    @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
+    public void httpRequestMethodNotSupportedException(HttpRequestMethodNotSupportedException e){
+
+        System.out.println(e.getSupportedHttpMethods().toString());
+        System.out.println(e.getSupportedMethods().toString());
+        System.out.println(e.getMessage().toString());
+        System.out.println(e.getMethod().toString());
+    }
+
+    @ExceptionHandler(ClassNotFoundException.class)
+    public void ClassNotFoundException(ClassNotFoundException e){
+
+        System.out.println(e.getCause().toString());
+        System.out.println(e.getMessage().toString());
     }
 
 }
