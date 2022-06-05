@@ -1,6 +1,6 @@
 package com.ward.photogram.web;
 
-import com.ward.photogram.domain.User;
+import com.ward.photogram.domain.user.User;
 import com.ward.photogram.handler.ex.CustomValidationException;
 import com.ward.photogram.service.AuthService;
 import com.ward.photogram.web.dto.auth.SignupDto;

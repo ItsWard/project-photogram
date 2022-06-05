@@ -1,4 +1,4 @@
-package com.ward.photogram.domain;
+package com.ward.photogram.domain.user;
 
 //JPA Java Persistence API (자바로 데이터를 영구적으로 저장할 수 있는 API를 제공 ->DB로)
 

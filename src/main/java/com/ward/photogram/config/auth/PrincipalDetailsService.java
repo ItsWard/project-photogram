@@ -1,7 +1,7 @@
 package com.ward.photogram.config.auth;
 
-import com.ward.photogram.domain.User;
-import com.ward.photogram.domain.UserRepository;
+import com.ward.photogram.domain.user.User;
+import com.ward.photogram.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -1,7 +1,8 @@
 package com.ward.photogram.service;
 
-import com.ward.photogram.domain.User;
-import com.ward.photogram.domain.UserRepository;
+import com.ward.photogram.domain.user.User;
+import com.ward.photogram.domain.user.UserRepository;
+import com.ward.photogram.handler.ex.CustomValidationApiException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,9 @@ public class UserSevice {
     @Transactional
     public User 회원수정(Long id, User user) {
         //1. 영속화
-        User userEntity = userRepository.findById(id).get();
+//        User userEntity = userRepository.findById(id).get(); //get으로 진행하는 경우, null값이 들어오면 문제가 생김
+        User userEntity = userRepository.findById(id).orElseThrow(() -> {return new CustomValidationApiException("찾을 수 없는 ID 입니다.");});
+        //Exception을 발동시키기 위해서는 orElseTrow() 사용
 
         String rawPassword = user.getPassword();
         String encPassword = bCryptPasswordEncoder.encode(rawPassword);

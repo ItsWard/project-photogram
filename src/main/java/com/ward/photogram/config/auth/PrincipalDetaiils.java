@@ -1,6 +1,6 @@
 package com.ward.photogram.config.auth;
 
-import com.ward.photogram.domain.User;
+import com.ward.photogram.domain.user.User;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

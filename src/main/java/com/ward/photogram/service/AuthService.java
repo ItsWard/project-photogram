@@ -1,8 +1,8 @@
 package com.ward.photogram.service;
 
 
-import com.ward.photogram.domain.User;
-import com.ward.photogram.domain.UserRepository;
+import com.ward.photogram.domain.user.User;
+import com.ward.photogram.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
