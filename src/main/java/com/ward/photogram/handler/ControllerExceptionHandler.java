@@ -1,5 +1,6 @@
 package com.ward.photogram.handler;
 
+import com.ward.photogram.handler.ex.CustomApiException;
 import com.ward.photogram.handler.ex.CustomValidationApiException;
 import com.ward.photogram.handler.ex.CustomValidationException;
 import com.ward.photogram.util.Script;
@@ -32,6 +33,12 @@ public class ControllerExceptionHandler {
         return new ResponseEntity<>(new CMRespDto<>(-1, e.getMessage(), e.getErrorMap()), HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(CustomApiException.class) //데이터 응답 , 유효성 검사
+    public ResponseEntity<?> validationApiException(CustomApiException e) {
+        System.out.println("--------------------------");
+        return new ResponseEntity<>(new CMRespDto<>(-1, e.getMessage(), null), HttpStatus.BAD_REQUEST);
+    }
+
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public void httpRequestMethodNotSupportedException(HttpRequestMethodNotSupportedException e){
 
@@ -47,5 +54,7 @@ public class ControllerExceptionHandler {
         System.out.println(e.getCause().toString());
         System.out.println(e.getMessage().toString());
     }
+
+
 
 }

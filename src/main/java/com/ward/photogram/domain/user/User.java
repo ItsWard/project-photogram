@@ -48,4 +48,10 @@ public class User {
     public void createDate(){
         this.createDate = LocalDateTime.now(); // Insert된 현재시간 입력
     }
+
+
+
+
+
+
 }
