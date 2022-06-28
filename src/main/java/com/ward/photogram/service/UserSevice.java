@@ -2,6 +2,7 @@ package com.ward.photogram.service;
 
 import com.ward.photogram.domain.user.User;
 import com.ward.photogram.domain.user.UserRepository;
+import com.ward.photogram.handler.ex.CustomException;
 import com.ward.photogram.handler.ex.CustomValidationApiException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -14,6 +15,16 @@ public class UserSevice {
 
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    public User 회원프로필(Long userId) {
+        //유저가 가지고있는 모든 정보들을 가지고 있어야함
+        //쿼리로 따지면 SELECT * FROM image WHERE userId =:userId;
+        User userEntity = userRepository.findById(userId).orElseThrow(() -> {
+            throw new CustomException("해당 프로필 페이지는 없는 페이지입니다");
+        });
+        return userEntity;
+    }
+
     @Transactional
     public User 회원수정(Long id, User user) {
         //1. 영속화

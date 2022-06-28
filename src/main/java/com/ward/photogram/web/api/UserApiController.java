@@ -1,6 +1,6 @@
 package com.ward.photogram.web.api;
 
-import com.ward.photogram.config.auth.PrincipalDetaiils;
+import com.ward.photogram.web.config.auth.PrincipalDetaiils;
 import com.ward.photogram.domain.user.User;
 import com.ward.photogram.handler.ex.CustomValidationApiException;
 import com.ward.photogram.service.UserSevice;

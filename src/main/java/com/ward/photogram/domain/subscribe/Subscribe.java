@@ -29,7 +29,7 @@ public class Subscribe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JoinColumn(name = "fromUserId") //컬럼명 만들 때 강제로 이름 변환
+    @JoinColumn(name = "fromUserId")     //컬럼명 만들 때 강제로 이름 변환
     @ManyToOne
     private User fromUser;
 
@@ -43,4 +43,7 @@ public class Subscribe {
     public void createDate(){
         this.createDate = LocalDateTime.now();
     }
+
+
+
 }
