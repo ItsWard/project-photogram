@@ -28,15 +28,15 @@ public class Subscribe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    //
     @JoinColumn(name = "fromUserId")     //컬럼명 만들 때 강제로 이름 변환
     @ManyToOne
     private User fromUser;
-
+    //
     @JoinColumn(name = "toUserId")//컬럼명 만들 때 강제로 이름 변환
     @ManyToOne
     private User toUser;
-
+    //
     private LocalDateTime createDate;
 
     @PrePersist
