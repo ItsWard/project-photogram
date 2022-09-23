@@ -36,7 +36,7 @@ public class Subscribe {
     @JoinColumn(name = "toUserId")//컬럼명 만들 때 강제로 이름 변환
     @ManyToOne
     private User toUser;
-
+    //
     private LocalDateTime createDate;
 
     @PrePersist
