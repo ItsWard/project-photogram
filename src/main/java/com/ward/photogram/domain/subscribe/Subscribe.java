@@ -32,7 +32,7 @@ public class Subscribe {
     @JoinColumn(name = "fromUserId")     //컬럼명 만들 때 강제로 이름 변환
     @ManyToOne
     private User fromUser;
-
+    //
     @JoinColumn(name = "toUserId")//컬럼명 만들 때 강제로 이름 변환
     @ManyToOne
     private User toUser;
